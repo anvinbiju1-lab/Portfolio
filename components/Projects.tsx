@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Shield, MousePointerClick, Users, ChefHat, Github, ChevronLeft, ChevronRight, X } from "lucide-react"
+import { Shield, MousePointerClick, Users, ChefHat, Github, ChevronLeft, ChevronRight, X, ExternalLink } from "lucide-react"
 import Image from "next/image"
 
 const PROJECTS = [
@@ -41,6 +41,7 @@ const PROJECTS = [
         description: "Full-stack restaurant web platform built with Next.js and Tailwind CSS. Features a modern responsive UI, menu showcase, and smooth page transitions.",
         tags: ["Next.js", "Tailwind CSS", "React"],
         github: "https://github.com/anvinbiju1-lab/heat-kitchen",
+        link: "https://the-hearth-kitchen.vercel.app",
         theme: "slate"
     }
 ]
@@ -190,7 +191,7 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
                                     ))}
                                 </div>
 
-                                <div className="mt-8 pt-8 border-t border-[#334155]">
+                                <div className="mt-8 pt-8 border-t border-[#334155] space-y-4">
                                     <a
                                         href={project.github}
                                         target="_blank"
@@ -200,6 +201,17 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
                                         <Github size={20} />
                                         Source Code
                                     </a>
+                                    {project.link && (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-outline-cyan w-full flex items-center justify-center gap-2"
+                                        >
+                                            <ExternalLink size={20} />
+                                            Live Preview
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
