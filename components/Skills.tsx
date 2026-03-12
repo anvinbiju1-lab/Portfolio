@@ -79,13 +79,16 @@ export default function Skills() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-50px" }}
-                            className="bg-card-bg/50 backdrop-blur-sm border border-card-border rounded-xl p-8 hover:border-cyan/30 transition-colors group"
+                            className="bg-card-bg/50 backdrop-blur-sm border border-card-border rounded-xl p-8 hover:border-cyan/30 transition-colors group relative overflow-hidden"
                         >
-                            <h3 className="text-xl font-bold text-white mb-6 font-mono group-hover:text-glow-cyan transition-all">
+                            {/* Glowing Orb Top Right */}
+                            <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl -mr-16 -mt-16 transition-colors ${category.theme === "slate" ? "bg-slate/10 group-hover:bg-slate/20" : "bg-cyan/10 group-hover:bg-cyan/20"}`} />
+
+                            <h3 className="text-xl font-bold text-white mb-6 font-mono group-hover:text-glow-cyan transition-all relative z-10">
                                 {category.title}
                             </h3>
 
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-wrap gap-3 relative z-10">
                                 {category.skills.map((skill) => (
                                     <motion.div
                                         key={skill}
