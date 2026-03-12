@@ -67,7 +67,7 @@ export default function Skills() {
                         <span className="command">ls</span> skills/
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-                        My <span className="text-cyan text-glow-cyan">Arsenal</span>
+                        My <span className="text-cyan text-glow-cyan-soft">Arsenal</span>
                     </h2>
                 </motion.div>
 
