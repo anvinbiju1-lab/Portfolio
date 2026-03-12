@@ -154,7 +154,7 @@ export default function Hero() {
                             transition={{ duration: 0.8, delay: 0.5 }}
                             className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-4 text-glow-cyan"
                         >
-                            Anvin Biju.
+                            Anvin Biju
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0 }}
