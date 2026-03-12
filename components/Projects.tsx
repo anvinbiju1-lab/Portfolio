@@ -122,83 +122,91 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
     }, [])
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/98 backdrop-blur-md"
-            onClick={onClose}
-        >
+        <AnimatePresence>
             <motion.div
-                initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                className="relative w-full max-w-5xl bg-[#0F0F0F] border border-[#1E1E2E] rounded-2xl overflow-hidden shadow-2xl flex flex-col"
-                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[9999] p-4 sm:p-6 md:p-12 flex items-center justify-center pointer-events-auto"
             >
-                {/* Header */}
-                <div className="p-4 md:p-6 border-b border-[#1E1E2E] flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center bg-[#1A1B26] border ${project.theme === 'cyan' ? 'border-cyan/30 shadow-cyan-glow' : 'border-purple/30 shadow-purple-glow'}`}>
-                            {project.icon}
+                {/* Backdrop */}
+                <div
+                    className="absolute inset-0 bg-black/90 backdrop-blur-xl"
+                    onClick={onClose}
+                />
+
+                {/* Modal Container */}
+                <motion.div
+                    initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                    animate={{ scale: 1, opacity: 1, y: 0 }}
+                    exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                    className="relative w-full max-w-5xl max-h-full bg-[#0F0F0F] border border-[#1E1E2E] rounded-2xl shadow-2xl flex flex-col overflow-hidden z-10"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    {/* Header - Fixed at Top */}
+                    <div className="flex-none p-4 md:p-6 border-b border-[#1E1E2E] flex items-center justify-between bg-[#0F0F0F] z-20">
+                        <div className="flex items-center gap-4">
+                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center bg-[#1A1B26] border ${project.theme === 'cyan' ? 'border-cyan/30 shadow-cyan-glow' : 'border-purple/30 shadow-purple-glow'}`}>
+                                {project.icon}
+                            </div>
+                            <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">{project.title}</h2>
                         </div>
-                        <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">{project.title}</h2>
+                        <button
+                            onClick={onClose}
+                            className="p-2 rounded-full hover:bg-white/10 text-text-secondary hover:text-white transition-colors"
+                            title="Close"
+                        >
+                            <X size={24} />
+                        </button>
                     </div>
-                    <button
-                        onClick={onClose}
-                        className="p-2 rounded-full hover:bg-white/10 text-text-secondary hover:text-white transition-colors"
-                        title="Close"
-                    >
-                        <X size={24} />
-                    </button>
-                </div>
 
-                {/* Content */}
-                <div className="p-4 md:p-8 overflow-y-auto hidden-scrollbar max-h-[80vh]">
-                    {project.images ? (
-                        <div className="mb-8">
-                            <ImageCarousel images={project.images} isModal />
-                        </div>
-                    ) : (
-                        <div className="w-full aspect-video flex-center bg-card-bg rounded-xl border border-card-border mb-8 text-text-secondary font-mono italic">
-                            &gt; GALLERY_DATA_PENDING...
-                        </div>
-                    )}
+                    {/* Content - Scrollable Region */}
+                    <div className="flex-1 overflow-y-auto hidden-scrollbar p-4 md:p-8 bg-[#0F0F0F]">
+                        {project.images ? (
+                            <div className="mb-8">
+                                <ImageCarousel images={project.images} isModal />
+                            </div>
+                        ) : (
+                            <div className="w-full aspect-video flex-center bg-card-bg rounded-xl border border-card-border mb-8 text-text-secondary font-mono italic">
+                                &gt; GALLERY_DATA_PENDING...
+                            </div>
+                        )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="md:col-span-2">
-                            <h3 className="text-purple-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; DESCRIPTION</h3>
-                            <p className="text-text-secondary leading-relaxed text-lg">{project.description}</p>
-                        </div>
-                        <div>
-                            <h3 className="text-cyan-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; TECH_STACK</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {project.tags.map((tag: string) => (
-                                    <span
-                                        key={tag}
-                                        className="text-xs font-mono px-3 py-1.5 rounded bg-[#1A1B26] text-text-secondary border border-purple-900/30"
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="md:col-span-2">
+                                <h3 className="text-purple-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; DESCRIPTION</h3>
+                                <p className="text-text-secondary leading-relaxed text-lg">{project.description}</p>
+                            </div>
+                            <div>
+                                <h3 className="text-cyan-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; TECH_STACK</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tags.map((tag: string) => (
+                                        <span
+                                            key={tag}
+                                            className="text-xs font-mono px-3 py-1.5 rounded bg-[#1A1B26] text-text-secondary border border-purple-900/30"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="mt-8 pt-8 border-t border-[#1E1E2E]">
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-primary w-full flex items-center justify-center gap-2"
                                     >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <div className="mt-8 pt-8 border-t border-[#1E1E2E]">
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-primary w-full flex items-center justify-center gap-2"
-                                >
-                                    <Github size={20} />
-                                    Source Code
-                                </a>
+                                        <Github size={20} />
+                                        Source Code
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </motion.div>
-        </motion.div>
+        </AnimatePresence>
     )
 }
 
