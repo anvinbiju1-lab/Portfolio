@@ -66,8 +66,9 @@ export default function Skills() {
                         <span className="prompt">&gt;</span>
                         <span className="command">ls</span> skills/
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-                        My <span className="text-slate text-glow-slate">Arsenal</span>
+                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight flex items-center justify-center gap-3">
+                        <span className="text-slate text-glow-slate">My</span>
+                        <span className="text-slate text-glow-slate">Arsenal</span>
                     </h2>
                 </motion.div>
 
@@ -82,7 +83,7 @@ export default function Skills() {
                             className="bg-card-bg/50 backdrop-blur-sm border border-card-border rounded-xl p-8 hover:border-cyan/30 transition-colors group relative overflow-hidden"
                         >
                             {/* Glowing Orb Top Right */}
-                            <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl -mr-16 -mt-16 transition-colors ${category.theme === "slate" ? "bg-slate/10 group-hover:bg-slate/20" : "bg-cyan/10 group-hover:bg-cyan/20"}`} />
+                            <div className={`absolute top-0 right-0 w-48 h-48 rounded-full blur-[64px] -mr-24 -mt-24 transition-all duration-500 ${category.theme === "slate" ? "bg-slate/10 group-hover:bg-slate/30" : "bg-cyan/10 group-hover:bg-cyan/30"}`} />
 
                             <h3 className="text-xl font-bold text-white mb-6 font-mono group-hover:text-glow-cyan transition-all relative z-10">
                                 {category.title}
