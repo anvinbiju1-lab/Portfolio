@@ -66,9 +66,8 @@ export default function Skills() {
                         <span className="prompt">&gt;</span>
                         <span className="command">ls</span> skills/
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight flex items-center justify-center gap-3">
-                        <span className="text-slate text-glow-slate">My</span>
-                        <span className="text-slate text-glow-slate">Arsenal</span>
+                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+                        My <span className="text-cyan text-glow-cyan">Arsenal</span>
                     </h2>
                 </motion.div>
 
