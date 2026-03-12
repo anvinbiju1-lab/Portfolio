@@ -162,7 +162,7 @@ export default function Hero() {
                             transition={{ duration: 0.8, delay: 1 }}
                             className="text-text-secondary font-mono text-sm md:text-lg tracking-[0.2em] uppercase"
                         >
-                            Software Developer & Cybersecurity Enthusiast
+                            Cybersecurity Engineer And Software Developer
                         </motion.p>
 
                         <motion.div
