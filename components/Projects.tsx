@@ -9,39 +9,39 @@ const PROJECTS = [
     {
         id: "scanmatrix",
         title: "ScanMatrix",
-        icon: <Shield size={24} className="text-purple-light" />,
+        icon: <Shield size={24} className="text-cyan-light" />,
         description: "Comprehensive Android security app that scans installed apps, permissions, and network activity. Features real-time threat detection, VirusTotal API integration for on-demand APK/file reputation checks, DNS monitoring, and per-app permission management with revoke controls. Built with on-device heuristic scan engine and WorkManager for scheduled threat-definition updates.",
         tags: ["Kotlin", "Jetpack Compose", "Room DB", "VirusTotal API", "Android 14"],
         github: "https://github.com/anvinbiju1-lab/ScanMatrix",
-        theme: "purple"
+        theme: "cyan"
     },
     {
         id: "clickforge",
         title: "ClickForge",
-        icon: <MousePointerClick size={24} className="text-cyan-light" />,
+        icon: <MousePointerClick size={24} className="text-slate-light" />,
         description: "Lightweight Windows desktop utility for custom mouse shortcuts using global low-level hooks. Features hold-click actions (screenshots, app launches, volume control), animated system tray UI, and single-file exe packaging. Runs at <0.5% CPU idle usage.",
         tags: ["Python", "CustomTkinter", "pynput", "pystray", "PyInstaller"],
         github: "https://github.com/anvinbiju1-lab/ClickForge",
-        theme: "cyan",
+        theme: "slate",
         images: ["/clickforge.png", "/clickforge-settings.png", "/clickforge-log.png", "/clickforge-edit.png"]
     },
     {
         id: "instagram",
         title: "Instagram Non-Followers Finder",
-        icon: <Users size={24} className="text-purple-light" />,
+        icon: <Users size={24} className="text-cyan-light" />,
         description: "Chrome Extension (MV3) that scans your Instagram followers/following to identify accounts not following back. Features DOM parsing, throttled profile checks, CSV export, and persistent settings via chrome.storage.",
         tags: ["JavaScript", "Chrome MV3", "DOM Parsing", "CSV Export"],
         github: "https://github.com/anvinbiju1-lab/IG-Non-Followers",
-        theme: "purple"
+        theme: "cyan"
     },
     {
         id: "heatkitchen",
         title: "Heat Kitchen",
-        icon: <ChefHat size={24} className="text-cyan-light" />,
+        icon: <ChefHat size={24} className="text-slate-light" />,
         description: "Full-stack restaurant web platform built with Next.js and Tailwind CSS. Features a modern responsive UI, menu showcase, and smooth page transitions.",
         tags: ["Next.js", "Tailwind CSS", "React"],
         github: "https://github.com/anvinbiju1-lab/heat-kitchen",
-        theme: "cyan"
+        theme: "slate"
     }
 ]
 
@@ -63,7 +63,7 @@ function ImageCarousel({ images, isModal = false }: { images: string[], isModal?
     if (!images || images.length === 0) return null
 
     return (
-        <div className={`relative w-full ${isModal ? 'aspect-video md:aspect-[16/10]' : 'aspect-video'} rounded-lg overflow-hidden mb-6 border border-[#1E1E2E] group-hover:border-cyan/30 transition-colors group/carousel`}>
+        <div className={`relative w-full ${isModal ? 'aspect-video md:aspect-[16/10]' : 'aspect-video'} rounded-lg overflow-hidden mb-6 border border-[#334155] group-hover:border-slate/30 transition-colors group/carousel`}>
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentIndex}
@@ -140,13 +140,13 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
                     initial={{ scale: 0.95, opacity: 0, y: 20 }}
                     animate={{ scale: 1, opacity: 1, y: 0 }}
                     exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                    className="relative w-full max-w-5xl max-h-full bg-[#0F0F0F] border border-[#1E1E2E] rounded-2xl shadow-2xl flex flex-col overflow-hidden z-10"
+                    className="relative w-full max-w-5xl max-h-full bg-[#1E293B] border border-[#334155] rounded-2xl shadow-2xl flex flex-col overflow-hidden z-10"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Header - Fixed at Top */}
-                    <div className="flex-none p-4 md:p-6 border-b border-[#1E1E2E] flex items-center justify-between bg-[#0F0F0F] z-20">
+                    <div className="flex-none p-4 md:p-6 border-b border-[#334155] flex items-center justify-between bg-[#1E293B] z-20">
                         <div className="flex items-center gap-4">
-                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center bg-[#1A1B26] border ${project.theme === 'cyan' ? 'border-cyan/30 shadow-cyan-glow' : 'border-purple/30 shadow-purple-glow'}`}>
+                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center bg-[#1A1B26] border ${project.theme === 'slate' ? 'border-slate/30 shadow-slate-glow' : 'border-cyan/30 shadow-cyan-glow'}`}>
                                 {project.icon}
                             </div>
                             <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">{project.title}</h2>
@@ -161,7 +161,7 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
                     </div>
 
                     {/* Content - Scrollable Region */}
-                    <div className="flex-1 overflow-y-auto hidden-scrollbar p-4 md:p-8 bg-[#0F0F0F]">
+                    <div className="flex-1 overflow-y-auto hidden-scrollbar p-4 md:p-8 bg-[#1E293B]">
                         {project.images ? (
                             <div className="mb-8">
                                 <ImageCarousel images={project.images} isModal />
@@ -174,23 +174,23 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="md:col-span-2">
-                                <h3 className="text-purple-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; DESCRIPTION</h3>
+                                <h3 className="text-cyan-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; DESCRIPTION</h3>
                                 <p className="text-text-secondary leading-relaxed text-lg">{project.description}</p>
                             </div>
                             <div>
-                                <h3 className="text-cyan-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; TECH_STACK</h3>
+                                <h3 className="text-slate-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; TECH_STACK</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag: string) => (
                                         <span
                                             key={tag}
-                                            className="text-xs font-mono px-3 py-1.5 rounded bg-[#1A1B26] text-text-secondary border border-purple-900/30"
+                                            className="text-xs font-mono px-3 py-1.5 rounded bg-[#1A1B26] text-text-secondary border border-cyan-900/30"
                                         >
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="mt-8 pt-8 border-t border-[#1E1E2E]">
+                                <div className="mt-8 pt-8 border-t border-[#334155]">
                                     <a
                                         href={project.github}
                                         target="_blank"
@@ -229,7 +229,7 @@ export default function Projects() {
                         <span className="command">cat</span> projects.json
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-                        Featured <span className="text-purple">Projects</span>
+                        Featured <span className="text-cyan">Projects</span>
                     </h2>
                 </motion.div>
 
@@ -245,12 +245,12 @@ export default function Projects() {
                             onClick={() => setSelectedProject(project)}
                         >
                             {/* Top Accent Bar */}
-                            <div className={`h-1.5 w-full ${project.theme === 'cyan' ? 'bg-gradient-to-r from-cyan to-blue-600' : 'bg-gradient-to-r from-purple to-pink-600'}`} />
+                            <div className={`h-1.5 w-full ${project.theme === 'slate' ? 'bg-gradient-to-r from-slate to-blue-600' : 'bg-gradient-to-r from-cyan to-pink-600'}`} />
 
                             <div className="p-8 flex flex-col flex-1">
                                 {/* Header */}
                                 <div className="flex justify-between items-start mb-6">
-                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-[#1A1B26] border ${project.theme === 'cyan' ? 'border-cyan/30 group-hover:border-cyan/60 group-hover:shadow-cyan-glow' : 'border-purple/30 group-hover:border-purple/60 group-hover:shadow-purple-glow'} transition-all`}>
+                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-[#1A1B26] border ${project.theme === 'slate' ? 'border-slate/30 group-hover:border-slate/60 group-hover:shadow-slate-glow' : 'border-cyan/30 group-hover:border-cyan/60 group-hover:shadow-cyan-glow'} transition-all`}>
                                         {project.icon}
                                     </div>
 
@@ -262,7 +262,7 @@ export default function Projects() {
                                         aria-label={`View ${project.title} on GitHub`}
                                         onClick={(e) => e.stopPropagation()}
                                     >
-                                        <Github size={24} className="group-hover:text-glow-purple transition-all" />
+                                        <Github size={24} className="group-hover:text-glow-cyan transition-all" />
                                     </a>
                                 </div>
 
@@ -270,7 +270,7 @@ export default function Projects() {
                                 {project.images && <ImageCarousel images={project.images} />}
 
                                 {/* Content */}
-                                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-glow-purple transition-all">
+                                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-glow-cyan transition-all">
                                     {project.title}
                                 </h3>
                                 <p className="text-text-secondary leading-relaxed mb-8 flex-1 text-sm lg:text-base">
@@ -282,7 +282,7 @@ export default function Projects() {
                                     {project.tags.map(tag => (
                                         <span
                                             key={tag}
-                                            className="text-xs font-mono px-2.5 py-1 rounded bg-[#1A1B26] text-text-secondary group-hover:text-white transition-colors border border-transparent group-hover:border-purple/30"
+                                            className="text-xs font-mono px-2.5 py-1 rounded bg-[#1A1B26] text-text-secondary group-hover:text-white transition-colors border border-transparent group-hover:border-cyan/30"
                                         >
                                             {tag}
                                         </span>

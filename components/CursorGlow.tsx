@@ -66,7 +66,7 @@ export default function CursorGlow() {
                     left: `${position.x}px`,
                     top: `${position.y}px`,
                     transform: `translate(-50%, -50%) scale(${isPointer ? 1.5 : 1})`,
-                    borderColor: isPointer ? "rgba(6, 182, 212, 0.6)" : "rgba(124, 58, 237, 0.4)",
+                    borderColor: isPointer ? "rgba(100, 116, 139, 0.6)" : "rgba(34, 211, 238, 0.3)",
                 }}
             />
         </>

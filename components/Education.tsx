@@ -10,7 +10,7 @@ const EDUCATION = [
         board: "APJ Abdul Kalam Technological University (KTU)",
         year: "2025 – Present (1st Year)",
         score: "Active",
-        icon: <GraduationCap size={24} className="text-purple-light" />
+        icon: <GraduationCap size={24} className="text-cyan-light" />
     },
     {
         title: "Higher Secondary (12th Grade) — Computer Science",
@@ -18,7 +18,7 @@ const EDUCATION = [
         board: "Kerala State Board",
         year: "2023 – 2025",
         score: "83%",
-        icon: <BookOpen size={24} className="text-cyan-light" />
+        icon: <BookOpen size={24} className="text-slate-light" />
     },
     {
         title: "Secondary Education (10th Grade)",
@@ -26,7 +26,7 @@ const EDUCATION = [
         board: "Kerala State Board",
         year: "2023",
         score: "91%",
-        icon: <Book size={24} className="text-purple-light" />
+        icon: <Book size={24} className="text-cyan-light" />
     }
 ]
 
@@ -47,11 +47,11 @@ export default function Education() {
                         <span className="command">history</span> --academic
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-                        Academic <span className="text-purple">Timeline</span>
+                        Academic <span className="text-cyan">Timeline</span>
                     </h2>
                 </motion.div>
 
-                <div className="relative border-l border-purple/30 ml-3 md:ml-6 pb-4 space-y-12">
+                <div className="relative border-l border-cyan/30 ml-3 md:ml-6 pb-4 space-y-12">
 
                     {EDUCATION.map((edu, idx) => (
                         <motion.div
@@ -63,9 +63,9 @@ export default function Education() {
                             className="relative pl-8 md:pl-12 group"
                         >
                             {/* Timeline Dot */}
-                            <div className="absolute top-1.5 -left-[7px] bg-[#080808] border-2 border-purple group-hover:border-cyan w-[14px] h-[14px] rounded-full transition-colors z-10 timeline-dot" />
+                            <div className="absolute top-1.5 -left-[7px] bg-[#0F172A] border-2 border-cyan group-hover:border-slate w-[14px] h-[14px] rounded-full transition-colors z-10 timeline-dot" />
 
-                            <div className="bg-card-bg border border-card-border p-6 rounded-xl group-hover:border-purple/50 group-hover:shadow-[0_0_20px_rgba(124,58,237,0.1)] transition-all flex flex-col sm:flex-row gap-6">
+                            <div className="bg-card-bg border border-card-border p-6 rounded-xl group-hover:border-cyan/50 group-hover:shadow-[0_0_20px_rgba(34, 211, 238, 0.1)] transition-all flex flex-col sm:flex-row gap-6">
 
                                 {/* Icon Box */}
                                 <div className="w-12 h-12 rounded-lg bg-[#1A1B26] border border-card-border flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -74,7 +74,7 @@ export default function Education() {
 
                                 {/* Content */}
                                 <div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-glow-purple transition-all">
+                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-glow-cyan transition-all">
                                         {edu.title}
                                     </h3>
                                     <div className="text-lg font-medium text-text-secondary mb-1">
@@ -84,10 +84,10 @@ export default function Education() {
                                         {edu.board}
                                     </div>
                                     <div className="flex flex-wrap gap-3 items-center">
-                                        <span className="inline-block px-3 py-1.5 rounded bg-[#1A1B26] border border-card-border text-xs font-mono text-cyan-light">
+                                        <span className="inline-block px-3 py-1.5 rounded bg-[#1A1B26] border border-card-border text-xs font-mono text-slate-light">
                                             {edu.year}
                                         </span>
-                                        <span className="inline-block px-3 py-1.5 rounded bg-purple/10 border border-purple/30 text-xs font-mono text-purple-light">
+                                        <span className="inline-block px-3 py-1.5 rounded bg-cyan/10 border border-cyan/30 text-xs font-mono text-cyan-light">
                                             Score: {edu.score}
                                         </span>
                                     </div>

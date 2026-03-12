@@ -45,7 +45,7 @@ export default function ParticleBackground() {
             },
             particles: {
                 color: {
-                    value: "#7C3AED", // primary purple
+                    value: "#22D3EE", // primary cyan
                 },
                 links: {
                     enable: false, // NO connecting lines, just floating symbols

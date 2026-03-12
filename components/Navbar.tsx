@@ -46,7 +46,7 @@ export default function Navbar() {
         <>
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? "bg-black/70 backdrop-blur-md border-b border-purple-900/30 py-3"
+                    ? "bg-[#0F172A]/80 backdrop-blur-md border-b border-cyan-900/30 py-3"
                     : "bg-transparent py-5"
                     }`}
             >
@@ -55,14 +55,8 @@ export default function Navbar() {
                         href="#hero"
                         className={`relative group flex items-center gap-2 transition-all duration-300 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
                     >
-                        <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-purple group-hover:border-cyan transition-colors shadow-purple-glow flex items-center justify-center bg-[#0F0F0F]">
-                            <Image
-                                src="/profile.png"
-                                alt="Anvin Biju"
-                                fill
-                                className="object-cover scale-[1.45] group-hover:scale-[1.35] transition-transform duration-500"
-                                unoptimized
-                            />
+                        <div className="relative w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-[#22D3EE] text-[#0F172A] shadow-cyan-glow font-black border border-transparent group-hover:border-white/20 transition-all">
+                            AB
                         </div>
                     </Link>
 
@@ -74,16 +68,16 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     className={`relative px-1 py-2 transition-colors ${activeSection === link.name.toLowerCase()
-                                        ? "text-purple-light font-medium"
+                                        ? "text-cyan-light font-medium"
                                         : "text-text-secondary hover:text-white"
                                         }`}
                                 >
-                                    <span className="text-purple-light/50 mr-1 opacity-0 group-hover:opacity-100 transition-opacity">/</span>
+                                    <span className="text-cyan-light/50 mr-1 opacity-0 group-hover:opacity-100 transition-opacity">/</span>
                                     {link.name}
                                     {activeSection === link.name.toLowerCase() && (
                                         <motion.div
                                             layoutId="navbar-indicator"
-                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-purple shadow-purple-glow"
+                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cyan shadow-cyan-glow"
                                             transition={{ type: "spring", stiffness: 350, damping: 30 }}
                                         />
                                     )}
@@ -91,11 +85,11 @@ export default function Navbar() {
                             ))}
                         </nav>
 
-                        <div className="flex items-center gap-4 text-text-secondary border-l border-purple-900/30 pl-8">
-                            <a href="https://github.com/anvinbiju1-lab" target="_blank" rel="noopener noreferrer" className="hover:text-glow-purple hover:text-white transition-all transform hover:scale-110" aria-label="GitHub">
+                        <div className="flex items-center gap-4 text-text-secondary border-l border-cyan-900/30 pl-8">
+                            <a href="https://github.com/anvinbiju1-lab" target="_blank" rel="noopener noreferrer" className="hover:text-glow-cyan hover:text-white transition-all transform hover:scale-110" aria-label="GitHub">
                                 <Github size={20} />
                             </a>
-                            <a href="https://www.linkedin.com/in/anvin-biju-29633b381/" target="_blank" rel="noopener noreferrer" className="hover:text-glow-purple hover:text-white transition-all transform hover:scale-110" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/anvin-biju-29633b381/" target="_blank" rel="noopener noreferrer" className="hover:text-glow-cyan hover:text-white transition-all transform hover:scale-110" aria-label="LinkedIn">
                                 <Linkedin size={20} />
                             </a>
                         </div>
@@ -145,11 +139,11 @@ export default function Navbar() {
                                         href={link.href}
                                         onClick={() => setMobileMenuOpen(false)}
                                         className={`pb-2 border-b border-card-border/50 transition-colors ${activeSection === link.name.toLowerCase()
-                                            ? "text-purple-light border-purple"
+                                            ? "text-cyan-light border-cyan"
                                             : "text-text-secondary"
                                             }`}
                                     >
-                                        <span className="text-purple-light/50 mr-2">›</span>
+                                        <span className="text-cyan-light/50 mr-2">›</span>
                                         {link.name}
                                     </Link>
                                 ))}

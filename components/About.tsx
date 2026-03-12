@@ -62,7 +62,7 @@ export default function About() {
                         <span className="command">cat</span> about.md
                     </div>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                        System <span className="text-purple">Overview</span>
+                        System <span className="text-cyan">Overview</span>
                     </h2>
                 </motion.div>
 
@@ -108,9 +108,9 @@ function StatCard({ stat, index, startAnimation }: { stat: any, index: number, s
         >
             <Link
                 href={stat.href}
-                className="block bg-card-bg border border-card-border p-6 rounded-xl hover:border-purple/50 cursor-pointer transition-colors group h-full"
+                className="block bg-card-bg border border-card-border p-6 rounded-xl hover:border-cyan/50 cursor-pointer transition-colors group h-full"
             >
-                <div className="text-4xl md:text-5xl font-black text-white mb-2 font-mono group-hover:text-glow-purple transition-all">
+                <div className="text-4xl md:text-5xl font-black text-white mb-2 font-mono group-hover:text-glow-cyan transition-all">
                     {count}{stat.suffix}
                 </div>
                 <div className="text-sm md:text-base text-text-secondary font-medium">

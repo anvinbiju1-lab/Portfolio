@@ -58,10 +58,10 @@ export default function TerminalWindow({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="w-full rounded-xl overflow-hidden border border-card-border bg-card-bg shadow-2xl"
+            className="w-full rounded-xl overflow-hidden border border-card-border bg-[#0F172A] shadow-2xl"
         >
             {/* OS Top Bar */}
-            <div className="flex items-center px-4 py-3 bg-[#1A1B26] border-b border-card-border">
+            <div className="flex items-center px-4 py-3 bg-[#1E293B] border-b border-card-border">
                 <div className="flex space-x-2">
                     <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
                     <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />

@@ -25,7 +25,7 @@ export default function Contact() {
     }
 
     return (
-        <section id="contact" className="py-24 relative z-10 bg-black/40 border-t border-purple-900/20">
+        <section id="contact" className="py-24 relative z-10 bg-black/40 border-t border-cyan-900/20">
             <div className="absolute inset-0 grid-pattern opacity-30 mix-blend-screen pointer-events-none" />
 
             <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
@@ -42,7 +42,7 @@ export default function Contact() {
                         <span className="command">ping</span> anvin
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-                        Initiate <span className="text-cyan text-glow-cyan">Connection</span>
+                        Initiate <span className="text-slate text-glow-slate">Connection</span>
                     </h2>
                 </motion.div>
 
@@ -54,9 +54,9 @@ export default function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
-                        className="bg-[#0F0F0F] border border-[#1E1E2E] rounded-xl p-8 font-mono text-sm leading-relaxed shadow-lg h-fit"
+                        className="bg-[#1E293B] border border-[#334155] rounded-xl p-8 font-mono text-sm leading-relaxed shadow-lg h-fit"
                     >
-                        <div className="flex items-center gap-2 mb-6 border-b border-[#1E1E2E] pb-4">
+                        <div className="flex items-center gap-2 mb-6 border-b border-[#334155] pb-4">
                             <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
                             <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
                             <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
@@ -65,34 +65,34 @@ export default function Contact() {
 
                         <div className="space-y-4">
                             <div className="flex">
-                                <span className="text-purple w-24 shrink-0">name</span>
+                                <span className="text-cyan w-24 shrink-0">name</span>
                                 <span className="text-white">: "Anvin Biju"</span>
                             </div>
                             <div className="flex">
-                                <span className="text-purple w-24 shrink-0">email</span>
-                                <span className="text-cyan hover:underline hover:text-cyan-light transition-colors"><a href="mailto:anvinbiju1@gmail.com">: "anvinbiju1@gmail.com"</a></span>
+                                <span className="text-cyan w-24 shrink-0">email</span>
+                                <span className="text-slate hover:underline hover:text-slate-light transition-colors"><a href="mailto:anvinbiju1@gmail.com">: "anvinbiju1@gmail.com"</a></span>
                             </div>
                             <div className="flex">
-                                <span className="text-purple w-24 shrink-0">phone</span>
+                                <span className="text-cyan w-24 shrink-0">phone</span>
                                 <span className="text-gold">: "+91 9605057773"</span>
                             </div>
                             <div className="flex">
-                                <span className="text-purple w-24 shrink-0">linkedin</span>
-                                <span className="text-cyan hover:underline hover:text-cyan-light transition-colors"><a href="https://www.linkedin.com/in/anvin-biju-29633b381/" target="_blank">: "linkedin.com/in/anvin-biju-29633b381/"</a></span>
+                                <span className="text-cyan w-24 shrink-0">linkedin</span>
+                                <span className="text-slate hover:underline hover:text-slate-light transition-colors"><a href="https://www.linkedin.com/in/anvin-biju-29633b381/" target="_blank">: "linkedin.com/in/anvin-biju-29633b381/"</a></span>
                             </div>
                             <div className="flex">
-                                <span className="text-purple w-24 shrink-0">github</span>
-                                <span className="text-cyan hover:underline hover:text-cyan-light transition-colors"><a href="https://github.com/anvinbiju1-lab" target="_blank">: "github.com/anvinbiju1-lab"</a></span>
+                                <span className="text-cyan w-24 shrink-0">github</span>
+                                <span className="text-slate hover:underline hover:text-slate-light transition-colors"><a href="https://github.com/anvinbiju1-lab" target="_blank">: "github.com/anvinbiju1-lab"</a></span>
                             </div>
                             <div className="flex">
-                                <span className="text-purple w-24 shrink-0">location</span>
+                                <span className="text-cyan w-24 shrink-0">location</span>
                                 <span className="text-white">: "Ernakulam, Kerala, India"</span>
                             </div>
                             <div className="flex">
-                                <span className="text-purple w-24 shrink-0">status</span>
+                                <span className="text-cyan w-24 shrink-0">status</span>
                                 <span className="text-success">: "Open to opportunities ✅"</span>
                             </div>
-                            <div className="mt-8 pt-4 border-t border-[#1E1E2E] text-text-secondary/50">
+                            <div className="mt-8 pt-4 border-t border-[#334155] text-text-secondary/50">
                                 <span className="text-success mr-2">visitor@anvin:~$</span>
                                 <span className="terminal-cursor" />
                             </div>
@@ -158,7 +158,7 @@ export default function Contact() {
                                 disabled={isSubmitting || isSuccess}
                                 className={`w-full py-4 rounded-lg font-bold flex items-center justify-center transition-all ${isSuccess
                                     ? "bg-success/20 text-success border border-success/50"
-                                    : "bg-purple hover:bg-purple-light text-white glow-purple"
+                                    : "bg-cyan hover:bg-cyan-light text-white glow-cyan"
                                     }`}
                             >
                                 {isSubmitting ? (

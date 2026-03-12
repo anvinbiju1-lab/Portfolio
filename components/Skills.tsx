@@ -6,22 +6,22 @@ const SKILL_CATEGORIES = [
     {
         title: "🔤 Languages",
         skills: ["Python", "Java", "C++", "C", "JavaScript", "HTML"],
-        theme: "purple"
+        theme: "cyan"
     },
     {
         title: "🛠️ Frameworks & Tools",
         skills: ["Jetpack Compose", "Next.js", "Tailwind CSS", "Android Studio", "CustomTkinter", "PyInstaller", "Antigravity IDE"],
-        theme: "cyan"
+        theme: "slate"
     },
     {
         title: "🔐 Cybersecurity",
         skills: ["Kali Linux", "Wireless Pentesting", "Network Analysis", "Ethical Hacking"],
-        theme: "purple"
+        theme: "cyan"
     },
     {
         title: "📦 Other",
         skills: ["Git & GitHub", "Chrome Extension MV3", "Room DB", "WorkManager", "pynput", "pystray"],
-        theme: "cyan"
+        theme: "slate"
     }
 ]
 
@@ -50,7 +50,7 @@ const itemVariants = {
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-24 relative z-10 bg-black/40 border-y border-purple-900/20">
+        <section id="skills" className="py-24 relative z-10 bg-black/40 border-y border-cyan-900/20">
             <div className="absolute inset-0 grid-pattern opacity-30 mix-blend-screen pointer-events-none" />
 
             <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
@@ -67,7 +67,7 @@ export default function Skills() {
                         <span className="command">ls</span> skills/
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-                        My <span className="text-cyan text-glow-cyan">Arsenal</span>
+                        My <span className="text-slate text-glow-slate">Arsenal</span>
                     </h2>
                 </motion.div>
 
@@ -79,9 +79,9 @@ export default function Skills() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-50px" }}
-                            className="bg-card-bg/50 backdrop-blur-sm border border-card-border rounded-xl p-8 hover:border-purple/30 transition-colors group"
+                            className="bg-card-bg/50 backdrop-blur-sm border border-card-border rounded-xl p-8 hover:border-cyan/30 transition-colors group"
                         >
-                            <h3 className="text-xl font-bold text-white mb-6 font-mono group-hover:text-glow-purple transition-all">
+                            <h3 className="text-xl font-bold text-white mb-6 font-mono group-hover:text-glow-cyan transition-all">
                                 {category.title}
                             </h3>
 
@@ -90,7 +90,7 @@ export default function Skills() {
                                     <motion.div
                                         key={skill}
                                         variants={itemVariants}
-                                        className={`skill-tag ${category.theme === "cyan" ? "cyan" : ""}`}
+                                        className={`skill-tag ${category.theme === "slate" ? "slate" : ""}`}
                                     >
                                         {skill}
                                     </motion.div>

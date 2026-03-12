@@ -127,8 +127,8 @@ export default function Hero() {
                         transition={{ duration: 1 }}
                         className="fixed inset-0 z-[200] bg-black flex flex-col items-center justify-center"
                     >
-                        <div className="w-12 h-12 border-4 border-purple/20 border-t-purple rounded-full animate-spin mb-4" />
-                        <p className="text-purple-light font-mono text-xs tracking-widest uppercase">Initializing Cinematic Experience...</p>
+                        <div className="w-12 h-12 border-4 border-cyan/20 border-t-cyan rounded-full animate-spin mb-4" />
+                        <p className="text-cyan-light font-mono text-xs tracking-widest uppercase">Initializing Cinematic Experience...</p>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -152,7 +152,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.5 }}
-                            className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-4 text-glow-purple"
+                            className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-4 text-glow-cyan"
                         >
                             Anvin Biju.
                         </motion.h1>
@@ -172,7 +172,7 @@ export default function Hero() {
                             transition={{ delay: 1.5 }}
                         >
                             <span className="text-[10px] font-mono text-text-secondary mb-2 tracking-[0.4em] uppercase">Scroll to begin</span>
-                            <div className="w-[1px] h-12 bg-gradient-to-b from-purple to-transparent" />
+                            <div className="w-[1px] h-12 bg-gradient-to-b from-cyan to-transparent" />
                         </motion.div>
                     </motion.div>
 
@@ -184,7 +184,7 @@ export default function Hero() {
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
                             Building security tools<br />& apps that matter.
                         </h2>
-                        <div className="text-xl md:text-3xl font-bold text-cyan text-glow-cyan h-12">
+                        <div className="text-xl md:text-3xl font-bold text-slate text-glow-slate h-12">
                             <TypeAnimation
                                 sequence={[
                                     "Android Security Apps.",
@@ -209,13 +209,13 @@ export default function Hero() {
                         className="flex flex-col items-center"
                     >
                         <h2 className="text-4xl md:text-6xl font-black text-white mb-10 leading-tight">
-                            Expertise in Kotlin, Python,<br /><span className="text-purple">Next.js & Ethical Hacking.</span>
+                            Expertise in Kotlin, Python,<br /><span className="text-cyan">Next.js & Ethical Hacking.</span>
                         </h2>
 
                         <div className="flex flex-col md:flex-row gap-6 mb-12">
                             <motion.button
-                                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(124, 58, 237, 0.5)" }}
-                                className="px-10 py-4 bg-purple text-white font-bold rounded-lg transition-all flex items-center gap-3 overflow-hidden group relative"
+                                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(34, 211, 238, 0.5)" }}
+                                className="px-10 py-4 bg-cyan text-white font-bold rounded-lg transition-all flex items-center gap-3 overflow-hidden group relative"
                                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                             >
                                 <span className="relative z-10 font-bold tracking-wider">View My Work</span>
@@ -228,7 +228,7 @@ export default function Hero() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05 }}
-                                className="px-10 py-4 border-2 border-cyan/50 hover:border-cyan text-cyan hover:bg-cyan/5 rounded-lg font-bold transition-all flex items-center gap-3"
+                                className="px-10 py-4 border-2 border-slate/50 hover:border-slate text-slate hover:bg-slate/5 rounded-lg font-bold transition-all flex items-center gap-3"
                             >
                                 <Download size={20} />
                                 <span>Download CV</span>

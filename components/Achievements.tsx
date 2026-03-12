@@ -5,7 +5,7 @@ import { Trophy, ShieldCheck } from "lucide-react"
 
 export default function Achievements() {
     return (
-        <section id="achievements" className="py-24 relative z-10 bg-black/40 border-y border-purple-900/20">
+        <section id="achievements" className="py-24 relative z-10 bg-black/40 border-y border-cyan-900/20">
             <div className="absolute inset-0 grid-pattern opacity-30 mix-blend-screen pointer-events-none" />
 
             <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">

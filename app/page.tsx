@@ -11,7 +11,7 @@ import CursorGlow from "@/components/CursorGlow"
 
 export default function Home() {
     return (
-        <main className="min-h-screen bg-background relative selection:bg-purple/30 selection:text-white page-fade-in">
+        <main className="min-h-screen bg-background relative selection:bg-cyan/30 selection:text-white page-fade-in">
             {/* Client-side cursor component for desktop */}
             <CursorGlow />
 
@@ -31,8 +31,8 @@ export default function Home() {
             <Footer />
 
             {/* Background Glow Overlays */}
-            <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple/10 rounded-full blur-[120px] pointer-events-none z-0" />
-            <div className="fixed bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-cyan/10 rounded-full blur-[120px] pointer-events-none z-0" />
+            <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-cyan/10 rounded-full blur-[120px] pointer-events-none z-0" />
+            <div className="fixed bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-slate/10 rounded-full blur-[120px] pointer-events-none z-0" />
         </main>
     )
 }
