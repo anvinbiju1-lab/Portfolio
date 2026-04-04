@@ -55,8 +55,13 @@ export default function Navbar() {
                         href="#hero"
                         className={`relative group flex items-center gap-2 transition-all duration-300 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
                     >
-                        <div className="relative w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-[#22D3EE] text-[#0F172A] shadow-cyan-glow font-black border border-transparent group-hover:border-white/20 transition-all">
-                            AB
+                        <div className="relative w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-card-bg shadow-cyan-glow border border-white/10 group-hover:border-cyan/50 transition-all">
+                            <Image
+                                src="/profile.png"
+                                alt="Anvin Biju"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </Link>
 
