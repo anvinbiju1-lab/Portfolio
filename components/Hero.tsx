@@ -40,6 +40,11 @@ export default function Hero() {
 
             const handleFrameLoad = () => {
                 loadedCount++
+                // Dismiss loading screen early (after 10 frames) to improve perceived performance
+                if (loadedCount === Math.min(10, TOTAL_FRAMES)) {
+                    setIsLoading(false)
+                }
+                // Fallback in case TOTAL_FRAMES is less than 10
                 if (loadedCount === TOTAL_FRAMES) {
                     setIsLoading(false)
                 }
@@ -47,7 +52,7 @@ export default function Hero() {
 
             for (let i = 1; i <= TOTAL_FRAMES; i++) {
                 const img = new window.Image()
-                img.src = `/sequence/frame_${i.toString().padStart(3, '0')}.png`
+                img.src = `/sequence/frame_${i.toString().padStart(3, '0')}.webp`
                 img.onload = handleFrameLoad
                 img.onerror = handleFrameLoad // Fail-safe: ensure loading screen clears even if an image fails
                 loadedImages.push(img)
