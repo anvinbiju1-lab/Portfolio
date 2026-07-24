@@ -7,8 +7,8 @@ export const contentType = 'image/png';
 export const runtime = 'nodejs';
 
 export default function Icon() {
-  // Read the profile image from the public folder
-  const imagePath = join(process.cwd(), 'public', 'profile.png');
+  // Read the cropped profile image from the public folder specifically for the favicon
+  const imagePath = join(process.cwd(), 'public', 'profile-favicon.png');
   const imageBuffer = readFileSync(imagePath);
   const base64Image = `data:image/png;base64,${imageBuffer.toString('base64')}`;
 
