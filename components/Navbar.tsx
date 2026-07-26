@@ -57,12 +57,12 @@ export default function Navbar() {
                     >
                         <div className="relative w-10 h-10 rounded-full overflow-hidden shadow-cyan-glow border border-white/20 group-hover:border-cyan/50 transition-all">
                             <Image
-                                src="/profile.png"
-                                alt="Anvin Biju"
-                                fill
-                                sizes="40px"
-                                priority
-                                className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                                src="/anvin-biju-cybersecurity-engineer.png"
+                                alt="Anvin Biju - Cybersecurity Engineer and Software Developer"
+                                width={40}
+                                height={40}
+                                priority={true}
+                                className="object-cover object-center transition-transform duration-500 group-hover:scale-110 w-full h-full"
                             />
                         </div>
                     </Link>
