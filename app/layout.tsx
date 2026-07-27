@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://anvinbiju.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://anvinbiju.indevs.in'
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -31,8 +31,12 @@ export const metadata: Metadata = {
         canonical: '/',
     },
     icons: {
-        icon: '/anvin-biju-cybersecurity-engineer.png',
-        shortcut: '/anvin-biju-cybersecurity-engineer.png',
+        icon: [
+            { url: '/favicon.ico' },
+            { url: '/anvin-biju-cybersecurity-engineer.png', sizes: '48x48', type: 'image/png' },
+            { url: '/anvin-biju-cybersecurity-engineer.png', sizes: '192x192', type: 'image/png' },
+        ],
+        shortcut: '/favicon.ico',
         apple: '/anvin-biju-cybersecurity-engineer.png',
     },
     openGraph: {
@@ -106,6 +110,9 @@ export default function RootLayout({
     return (
         <html lang="en" className="scroll-smooth">
             <head>
+                <link rel="icon" href="/favicon.ico" sizes="any" />
+                <link rel="icon" type="image/png" sizes="48x48" href="/anvin-biju-cybersecurity-engineer.png" />
+                <link rel="apple-touch-icon" href="/anvin-biju-cybersecurity-engineer.png" />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
