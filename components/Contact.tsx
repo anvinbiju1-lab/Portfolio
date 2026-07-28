@@ -78,7 +78,7 @@ export default function Contact() {
                             </div>
                             <div className="flex">
                                 <span className="text-cyan w-24 shrink-0">linkedin</span>
-                                <span className="text-slate hover:underline hover:text-slate-light transition-colors"><a href="https://www.linkedin.com/in/anvin-biju-29633b381/" target="_blank">: "linkedin.com/in/anvin-biju-29633b381/"</a></span>
+                                <span className="text-slate hover:underline hover:text-slate-light transition-colors"><a href="https://www.linkedin.com/in/anvin-biju" target="_blank">: "linkedin.com/in/anvin-biju"</a></span>
                             </div>
                             <div className="flex">
                                 <span className="text-cyan w-24 shrink-0">github</span>
@@ -117,7 +117,7 @@ export default function Contact() {
                                     id="name"
                                     required
                                     className="form-input"
-                                    placeholder="John Doe"
+                                    placeholder=""
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 />
@@ -132,7 +132,7 @@ export default function Contact() {
                                     id="email"
                                     required
                                     className="form-input"
-                                    placeholder="john@example.com"
+                                    placeholder=""
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                 />
@@ -147,7 +147,7 @@ export default function Contact() {
                                     required
                                     rows={5}
                                     className="form-input resize-none"
-                                    placeholder="I have a project idea..."
+                                    placeholder=""
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                 />

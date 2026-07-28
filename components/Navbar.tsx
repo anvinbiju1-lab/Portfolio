@@ -96,7 +96,7 @@ export default function Navbar() {
                             <a href="https://github.com/anvinbiju1-lab" target="_blank" rel="noopener noreferrer" className="hover:text-glow-cyan hover:text-white transition-all transform hover:scale-110" aria-label="GitHub">
                                 <Github size={20} />
                             </a>
-                            <a href="https://www.linkedin.com/in/anvin-biju-29633b381/" target="_blank" rel="noopener noreferrer" className="hover:text-glow-cyan hover:text-white transition-all transform hover:scale-110" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/anvin-biju" target="_blank" rel="noopener noreferrer" className="hover:text-glow-cyan hover:text-white transition-all transform hover:scale-110" aria-label="LinkedIn">
                                 <Linkedin size={20} />
                             </a>
                         </div>

@@ -12,10 +12,6 @@ export default function Footer() {
                     Anvin Biju 2026. All rights reserved.
                 </div>
 
-                <div className="text-slate/70 text-sm">
-                    Built with Next.js & Tailwind CSS
-                </div>
-
                 <div className="flex items-center gap-4 text-slate">
                     <a
                         href="https://github.com/anvinbiju1-lab"
@@ -27,7 +23,7 @@ export default function Footer() {
                         <Github size={20} />
                     </a>
                     <a
-                        href="https://www.linkedin.com/in/anvin-biju-29633b381/"
+                        href="https://www.linkedin.com/in/anvin-biju"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-glow-cyan hover:text-white transition-all transform hover:scale-110"

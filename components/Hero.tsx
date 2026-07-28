@@ -245,7 +245,7 @@ export default function Hero() {
                             <a href="https://github.com/anvinbiju1-lab" target="_blank" className="text-text-secondary hover:text-white transition-all transform hover:scale-125">
                                 <Github size={32} />
                             </a>
-                            <a href="https://www.linkedin.com/in/anvin-biju-29633b381/" target="_blank" className="text-text-secondary hover:text-white transition-all transform hover:scale-125">
+                            <a href="https://www.linkedin.com/in/anvin-biju" target="_blank" className="text-text-secondary hover:text-white transition-all transform hover:scale-125">
                                 <Linkedin size={32} />
                             </a>
                             <a href="mailto:anvinbiju1@gmail.com" className="text-text-secondary hover:text-white transition-all transform hover:scale-125">
