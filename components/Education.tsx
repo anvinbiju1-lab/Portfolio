@@ -8,7 +8,7 @@ const EDUCATION = [
         title: "B.Tech in Computer Science & Engineering (Cybersecurity)",
         institution: "Holy Grace Academy of Engineering, Mala",
         board: "APJ Abdul Kalam Technological University (KTU)",
-        year: "2025 – Present (1st Year)",
+        year: "2025 – Present (2nd Year)",
         score: "Active",
         icon: <GraduationCap size={24} className="text-cyan-light" />
     },

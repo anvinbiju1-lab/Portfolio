@@ -29,7 +29,7 @@ function useCountUp(end: number, duration: number = 2000, trigger: boolean = fal
 }
 
 const STATS = [
-    { label: "Projects Built", value: 4, suffix: "+", href: "#projects" },
+    { label: "Projects Built", value: 7, suffix: "+", href: "#projects" },
     { label: "Certifications", value: 2, suffix: "", href: "#achievements" },
     { label: "National Hackathon", value: 1, suffix: "", href: "#achievements" },
     { label: "Languages", value: 3, suffix: "+", href: "#skills" },
@@ -41,7 +41,7 @@ export default function About() {
     const terminalLines = [
         { command: "whoami", output: "Anvin Biju — Developer & Security Enthusiast" },
         { command: "location", output: "Ernakulam, Kerala, India" },
-        { command: "status", output: "1st Year B.Tech CSE (Cybersecurity) @ HGAE" },
+        { command: "status", output: "2nd Year B.Tech CSE (Cybersecurity) @ HGAE" },
         { command: "passion", output: "Building things that solve MY own problems" },
         { command: "cat currently_learning.txt", output: "Ethical Hacking | Android Dev | Web Dev" }
     ]

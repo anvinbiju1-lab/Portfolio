@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Shield, MousePointerClick, Users, ChefHat, Github, ChevronLeft, ChevronRight, X, ExternalLink } from "lucide-react"
+import { Shield, MousePointerClick, Users, Github, ChevronLeft, ChevronRight, X, ExternalLink, Bot, ShieldCheck, Lock, Wifi } from "lucide-react"
 import Image from "next/image"
 
 const PROJECTS = [
@@ -10,15 +10,75 @@ const PROJECTS = [
         id: "scanmatrix",
         title: "ScanMatrix",
         icon: <Shield size={24} className="text-cyan-light" />,
+        date: "2025 – Present",
         description: "Comprehensive Android security app that scans installed apps, permissions, and network activity. Features real-time threat detection, VirusTotal API integration for on-demand APK/file reputation checks, DNS monitoring, and per-app permission management with revoke controls. Built with on-device heuristic scan engine and WorkManager for scheduled threat-definition updates.",
         tags: ["Kotlin", "Jetpack Compose", "Room DB", "VirusTotal API", "Android 14"],
         github: "https://github.com/anvinbiju1-lab/ScanMatrix",
         theme: "cyan"
     },
     {
+        id: "jarvis-lite",
+        title: "Jarvis Lite – Android Voice Assistant",
+        icon: <Bot size={24} className="text-slate-light" />,
+        date: "May 2026 – Present",
+        description: "Building a voice-first Android assistant app in Kotlin with Jetpack Compose that controls on-screen phone actions using Accessibility Service, speech recognition, and safe Android system APIs.",
+        details: [
+            "Accessibility-based action engine: node search by text and content description, indexed clickable item selection, safe text entry into editable fields",
+            "Voice command parsing with execution result logging and fallback error handling",
+            "Reusable app adapters (YouTube, Instagram) for automating in-app actions via voice",
+            "Designed within Android platform limits, no root required"
+        ],
+        tags: ["Kotlin", "Jetpack Compose", "Android Accessibility Service", "Speech-to-Text APIs"],
+        github: "https://github.com/anvinbiju1-lab/Jarvis-Lite",
+        theme: "slate"
+    },
+    {
+        id: "cyberscan",
+        title: "CyberScan – Web Security & HTTP Header Auditor",
+        icon: <ShieldCheck size={24} className="text-cyan-light" />,
+        date: "Jul 2026",
+        description: "CyberScan is a web security auditing utility that analyzes HTTP response headers and security configurations of target websites in real-time.",
+        details: [
+            "Automated Security Analysis: Built an engine using Python (FastAPI) and async HTTP requests to inspect critical headers, including Content-Security-Policy (CSP), Strict-Transport-Security (HSTS), X-Frame-Options, and X-Content-Type-Options.",
+            "Risk Evaluation & Scoring: Developed a rule-based scoring module that grades web server configurations, flags version/server banner disclosures, and offers actionable remediation tips.",
+            "Modern UI & Deployment: Designed an intuitive dark-themed dashboard using Tailwind CSS featuring dynamic state transitions, animated score counters, and scan history tracking."
+        ],
+        tags: ["Python", "FastAPI", "Tailwind CSS", "Web Security"],
+        github: "https://github.com/anvinbiju1-lab/CyberScan",
+        link: "https://anvin-cyber-scan.vercel.app",
+        theme: "cyan"
+    },
+    {
+        id: "keyguard",
+        title: "KeyGuard – Password & Breach Auditor",
+        icon: <Lock size={24} className="text-slate-light" />,
+        date: "Jul 2026",
+        description: "KeyGuard is a privacy-first web application engineered to evaluate password mathematical strength and check against known data breach repositories using zero-knowledge principles.",
+        details: [
+            "Privacy-First Breach Checking: Integrated the HaveIBeenPwned API via k-Anonymity range requests (SHA-1 hashing); guarantees plain-text passwords and full hashes are never exposed over the network.",
+            "Information Entropy Calculation: Built an algorithmic evaluator in Python that measures string length, character set distribution, and bit-entropy to score security posture accurately.",
+            "Enterprise Interface: Designed a clean, minimalist dashboard with real-time entropy metrics, character pool badges, and actionable remediation feedback."
+        ],
+        tags: ["Information Security", "Python", "HaveIBeenPwned API", "Bit-Entropy"],
+        github: "https://github.com/anvinbiju1-lab/KeyGuard",
+        link: "https://anvin-key-guard.vercel.app",
+        theme: "slate"
+    },
+    {
+        id: "wistream",
+        title: "WiStream – Wi-Fi FTP Media Server",
+        icon: <Wifi size={24} className="text-cyan-light" />,
+        date: "Mar 2026",
+        description: "Built a native Android app in Kotlin that turns an Android phone into an always‑on Wi‑Fi FTP media server for local streaming to Android TV via VLC. It lets users select a folder to share, runs as a foreground service so it keeps working with the screen off, and is optimized for smooth playback of large 3–4 GB movie files over Wi‑Fi.",
+        tags: ["Kotlin", "Android", "FTP Server", "Foreground Service", "VLC Streaming"],
+        github: "https://github.com/anvinbiju1-lab/WiStream",
+        theme: "cyan"
+    },
+    {
         id: "clickforge",
         title: "ClickForge",
         icon: <MousePointerClick size={24} className="text-slate-light" />,
+        date: "2026",
         description: "Lightweight Windows desktop utility for custom mouse shortcuts using global low-level hooks. Features hold-click actions (screenshots, app launches, volume control), animated system tray UI, and single-file exe packaging. Runs at <0.5% CPU idle usage.",
         tags: ["Python", "CustomTkinter", "pynput", "pystray", "PyInstaller"],
         github: "https://github.com/anvinbiju1-lab/ClickForge",
@@ -29,20 +89,11 @@ const PROJECTS = [
         id: "instagram",
         title: "Instagram Non-Followers Finder",
         icon: <Users size={24} className="text-cyan-light" />,
+        date: "2026",
         description: "Chrome Extension (MV3) that scans your Instagram followers/following to identify accounts not following back. Features DOM parsing, throttled profile checks, CSV export, and persistent settings via chrome.storage.",
         tags: ["JavaScript", "Chrome MV3", "DOM Parsing", "CSV Export"],
         github: "https://github.com/anvinbiju1-lab/IG-Non-Followers",
         theme: "cyan"
-    },
-    {
-        id: "heatkitchen",
-        title: "Heat Kitchen",
-        icon: <ChefHat size={24} className="text-slate-light" />,
-        description: "Full-stack restaurant web platform built with Next.js and Tailwind CSS. Features a modern responsive UI, menu showcase, and smooth page transitions.",
-        tags: ["Next.js", "Tailwind CSS", "React"],
-        github: "https://github.com/anvinbiju1-lab/heat-kitchen",
-        link: "https://the-hearth-kitchen.vercel.app",
-        theme: "slate"
     }
 ]
 
@@ -116,7 +167,6 @@ function ImageCarousel({ images, isModal = false }: { images: string[], isModal?
 }
 
 function ProjectModal({ project, onClose }: { project: any, onClose: () => void }) {
-    // Disable body scroll when modal is open
     useEffect(() => {
         document.body.style.overflow = 'hidden'
         return () => { document.body.style.overflow = 'unset' }
@@ -130,13 +180,11 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 z-[9999] p-4 sm:p-6 md:p-12 flex items-center justify-center pointer-events-auto"
             >
-                {/* Backdrop */}
                 <div
                     className="absolute inset-0 bg-black/90 backdrop-blur-xl"
                     onClick={onClose}
                 />
 
-                {/* Modal Container */}
                 <motion.div
                     initial={{ scale: 0.95, opacity: 0, y: 20 }}
                     animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -144,13 +192,15 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
                     className="relative w-full max-w-5xl max-h-full bg-[#1E293B] border border-[#334155] rounded-2xl shadow-2xl flex flex-col overflow-hidden z-10"
                     onClick={(e) => e.stopPropagation()}
                 >
-                    {/* Header - Fixed at Top */}
                     <div className="flex-none p-4 md:p-6 border-b border-[#334155] flex items-center justify-between bg-[#1E293B] z-20">
                         <div className="flex items-center gap-4">
                             <div className={`w-10 h-10 rounded-lg flex items-center justify-center bg-[#1A1B26] border ${project.theme === 'slate' ? 'border-slate/30 shadow-slate-glow' : 'border-cyan/30 shadow-cyan-glow'}`}>
                                 {project.icon}
                             </div>
-                            <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">{project.title}</h2>
+                            <div>
+                                <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">{project.title}</h2>
+                                {project.date && <p className="text-xs font-mono text-cyan">{project.date}</p>}
+                            </div>
                         </div>
                         <button
                             onClick={onClose}
@@ -161,22 +211,31 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
                         </button>
                     </div>
 
-                    {/* Content - Scrollable Region */}
                     <div className="flex-1 overflow-y-auto hidden-scrollbar p-4 md:p-8 bg-[#1E293B]">
                         {project.images ? (
                             <div className="mb-8">
                                 <ImageCarousel images={project.images} isModal />
                             </div>
-                        ) : (
-                            <div className="w-full aspect-video flex-center bg-card-bg rounded-xl border border-card-border mb-8 text-text-secondary font-mono italic">
-                                &gt; GALLERY_DATA_PENDING...
-                            </div>
-                        )}
+                        ) : null}
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="md:col-span-2">
-                                <h3 className="text-cyan-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; DESCRIPTION</h3>
-                                <p className="text-text-secondary leading-relaxed text-lg">{project.description}</p>
+                                <h3 className="text-cyan-light font-mono text-sm mb-3 tracking-widest uppercase">&gt; DESCRIPTION</h3>
+                                <p className="text-text-secondary leading-relaxed text-base md:text-lg mb-6">{project.description}</p>
+
+                                {project.details && (
+                                    <div className="space-y-3 border-t border-[#334155] pt-6">
+                                        <h4 className="text-white font-mono text-sm tracking-widest uppercase">&gt; KEY_HIGHLIGHTS</h4>
+                                        <ul className="space-y-2.5 text-text-secondary text-sm">
+                                            {project.details.map((bullet: string, i: number) => (
+                                                <li key={i} className="flex items-start gap-2.5">
+                                                    <span className="text-cyan font-mono mt-0.5">&gt;</span>
+                                                    <span className="leading-relaxed">{bullet}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
                             <div>
                                 <h3 className="text-slate-light font-mono text-sm mb-4 tracking-widest uppercase">&gt; TECH_STACK</h3>
@@ -209,7 +268,7 @@ function ProjectModal({ project, onClose }: { project: any, onClose: () => void 
                                             className="btn-outline-cyan w-full flex items-center justify-center gap-2"
                                         >
                                             <ExternalLink size={20} />
-                                            Live Preview
+                                            Test Now / Live Demo
                                         </a>
                                     )}
                                 </div>
@@ -241,7 +300,7 @@ export default function Projects() {
                         <span className="command">cat</span> projects.json
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-                        Featured <span className="text-cyan">Projects</span>
+                        Featured <span className="text-cyan">Projects</span> ({PROJECTS.length})
                     </h2>
                 </motion.div>
 
@@ -256,40 +315,53 @@ export default function Projects() {
                             className="project-card flex flex-col h-full bg-card-bg group cursor-pointer"
                             onClick={() => setSelectedProject(project)}
                         >
-                            {/* Top Accent Bar */}
                             <div className={`h-1.5 w-full ${project.theme === 'slate' ? 'bg-gradient-to-r from-slate to-blue-600' : 'bg-gradient-to-r from-cyan to-pink-600'}`} />
 
                             <div className="p-8 flex flex-col flex-1">
-                                {/* Header */}
-                                <div className="flex justify-between items-start mb-6">
+                                <div className="flex justify-between items-start mb-4">
                                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-[#1A1B26] border ${project.theme === 'slate' ? 'border-slate/30 group-hover:border-slate/60 group-hover:shadow-slate-glow' : 'border-cyan/30 group-hover:border-cyan/60 group-hover:shadow-cyan-glow'} transition-all`}>
                                         {project.icon}
                                     </div>
 
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-text-secondary hover:text-white transition-colors"
-                                        aria-label={`View ${project.title} on GitHub`}
-                                        onClick={(e) => e.stopPropagation()}
-                                    >
-                                        <Github size={24} className="group-hover:text-glow-cyan transition-all" />
-                                    </a>
+                                    <div className="flex items-center gap-3">
+                                        {project.link && (
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-text-secondary hover:text-cyan transition-colors"
+                                                aria-label={`Test ${project.title}`}
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <ExternalLink size={20} className="hover:scale-110 transition-transform" />
+                                            </a>
+                                        )}
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-text-secondary hover:text-white transition-colors"
+                                            aria-label={`View ${project.title} on GitHub`}
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            <Github size={22} className="group-hover:text-glow-cyan transition-all" />
+                                        </a>
+                                    </div>
                                 </div>
 
-                                {/* Optional Image Carousel */}
+                                {project.date && (
+                                    <div className="text-xs font-mono text-cyan/70 mb-2">{project.date}</div>
+                                )}
+
                                 {project.images && <ImageCarousel images={project.images} />}
 
-                                {/* Content */}
-                                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-glow-cyan transition-all">
+                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-glow-cyan transition-all">
                                     {project.title}
                                 </h3>
-                                <p className="text-text-secondary leading-relaxed mb-8 flex-1 text-sm lg:text-base">
+                                <p className="text-text-secondary leading-relaxed mb-6 flex-1 text-sm lg:text-base line-clamp-4">
                                     {project.description}
                                 </p>
 
-                                {/* Footer (Tags) */}
                                 <div className="flex flex-wrap gap-2 pt-6 border-t border-card-border/50">
                                     {project.tags.map(tag => (
                                         <span
