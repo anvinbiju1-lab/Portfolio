@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     creator: 'Anvin Biju',
     publisher: 'Anvin Biju',
     alternates: {
-        canonical: '/',
+        canonical: siteUrl,
     },
     icons: {
         icon: [
